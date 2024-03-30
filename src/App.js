@@ -51,6 +51,7 @@
 import "./App.css";
 import { useState } from "react";
 import { validateEmail } from "./utils";
+import Button from './Button'
 
 const PasswordErrorMessage = () => {
   return (
@@ -92,6 +93,7 @@ function App() {
   };
 
   return (
+    // explain basic functionality of form submission
     <div className="App">
       <form onSubmit={handleSubmit}>
         <fieldset>
@@ -168,6 +170,14 @@ function App() {
           </button>
         </fieldset>
       </form>
+      <div>
+
+        {/* explain the Props object */}
+      <div>
+      <Button text="Click me!" />
+      <Button text="Submit" />
+    </div>
+      </div>
     </div>
   );
 }
