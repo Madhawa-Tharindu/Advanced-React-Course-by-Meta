@@ -2,6 +2,7 @@ import "./App.css";
 import { useState } from "react";
 import { validateEmail } from "./utils";
 import Button from './Button'
+import { UserProvider } from "./userContext";
 
 const PasswordErrorMessage = () => {
   return (
@@ -61,7 +62,7 @@ function App() {
     )
   }
 
-  const page = () => {
+  const Page = () => {
     return (
       <div>
         <h2>What is lorem ipsum</h2>
@@ -162,6 +163,10 @@ function App() {
       <Button text="Submit" />
     </div>
       {/* explain context in React */}
+      <UserProvider> 
+        <Header />
+        <Page />
+       </UserProvider>
       </div>
     </div>
   );
