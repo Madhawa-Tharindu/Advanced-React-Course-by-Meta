@@ -1,53 +1,3 @@
-// //import logo from './logo.svg';
-// import './App.css';
-// import {useState} from "react"
-
-// function App() {
-
-//   const [name, setName] = useState("");
-//   const [range, setRange] = useState("5");
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     setName("");
-//     setRange("");
-//     console.log("Form Submitted!", name, range);
-//   }
-//     return (
-//     <div className="App">
-
-//       <form onSubmit={handleSubmit}>
-//          <fieldset>
-//           <div className="Field">
-//               <label htmlFor='name'>Name:</label>
-//               <input
-//                 id='name'
-//                 type="text"
-//                 placeholder="Name"
-//                 name="name"
-//                 value={name}
-//                 onChange={(e) => setName(e.target.value)}
-//                 />
-//                 <label htmlFor='range'>Feedback:</label>
-//               <input
-//                 id='range'
-//                 type="range"
-//                 min={0}
-//                 max={5}
-//                 value={range}
-//                 onChange={(e) => setRange(e.target.value)}
-//                 />
-//           </div>
-//           <button disabled={!name} type="submit">Submit</button>
-//          </fieldset>
-//       </form>
-
-//     </div>
-//   );
-// }
-
-// export default App;
-
 import "./App.css";
 import { useState } from "react";
 import { validateEmail } from "./utils";
@@ -91,6 +41,40 @@ function App() {
     alert("Account created!");
     clearForm();
   };
+
+
+  // explain context in React
+  const LoggedInUser = () => {
+    return (
+      <p>
+        Hello <span className="UserName"></span>
+      </p>
+    )
+  }
+
+  const Header = () => {
+    return (
+      <header>
+        <h2>Blog App</h2>
+        <LoggedInUser />
+      </header>
+    )
+  }
+
+  const page = () => {
+    return (
+      <div>
+        <h2>What is lorem ipsum</h2>
+        <p>
+          sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+          sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssd
+          dfdgrgdgsfdsdfdsdfdsdfds  sdcdsccccccccccccccccccccccccccccccccccccccccccccccccccc
+          ccccccccccccccccc
+        </p>
+        <p>Written By: </p>
+      </div>
+    )
+  }
 
   return (
     // explain basic functionality of form submission
@@ -177,6 +161,7 @@ function App() {
       <Button text="Click me!" />
       <Button text="Submit" />
     </div>
+      {/* explain context in React */}
       </div>
     </div>
   );
