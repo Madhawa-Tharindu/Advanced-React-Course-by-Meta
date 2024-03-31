@@ -3,6 +3,7 @@ import { useState } from "react";
 import { validateEmail } from "./utils";
 import Button from './Button'
 import { UserProvider } from "./userContext";
+import { useUser } from "./userContext";
 
 const PasswordErrorMessage = () => {
   return (
@@ -46,9 +47,10 @@ function App() {
 
   // explain context in React
   const LoggedInUser = () => {
+    const {user} = useUser();
     return (
       <p>
-        Hello <span className="UserName"></span>
+        Hello <span className="UserName">{user.name}</span>
       </p>
     )
   }
@@ -63,6 +65,7 @@ function App() {
   }
 
   const Page = () => {
+    const {user} = useUser();
     return (
       <div>
         <h2>What is lorem ipsum</h2>
@@ -72,7 +75,7 @@ function App() {
           dfdgrgdgsfdsdfdsdfdsdfds  sdcdsccccccccccccccccccccccccccccccccccccccccccccccccccc
           ccccccccccccccccc
         </p>
-        <p>Written By: </p>
+        <p>Written By: {user.name}</p>
       </div>
     )
   }
