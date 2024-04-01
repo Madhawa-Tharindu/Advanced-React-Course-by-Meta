@@ -169,7 +169,7 @@ function App() {
       <UserProvider> 
         <Header />
         <Page />
-       </UserProvider>
+      </UserProvider>
       </div>
     </div>
   );
